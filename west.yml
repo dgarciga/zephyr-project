@@ -1,0 +1,24 @@
+  
+# Copyright (c) 2021 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+manifest:
+  self:
+    path: zephyr-project 
+
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: wolfssl
+      url-base: https://git.fslab.de/rgonza2s
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: fd0e46506fabd4c0c91ecb336a39cb6a6aa2b270
+      import: true
+    - name: wolfssl-kemtls-updated
+      path: modules/crypto/wolfssl
+      revision: kemtls-nopqm4
+      remote: wolfssl
+      submodules: true
